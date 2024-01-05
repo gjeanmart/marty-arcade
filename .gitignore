@@ -1,3 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
-/dist/
+/dist
+
+
+
+
+
+.DS_Store
