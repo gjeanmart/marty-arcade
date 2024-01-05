@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://1laqch6ese18"]
+
+[ext_resource type="FontFile" uid="uid://ceoj7py0vd6t2" path="res://fonts/Super Milk.ttf" id="1_24qg2"]
+
+[resource]
+font = ExtResource("1_24qg2")
+font_size = 56
+font_color = Color(0.552941, 0.0117647, 0.352941, 1)

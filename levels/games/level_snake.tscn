@@ -1,0 +1,238 @@
+[gd_scene load_steps=14 format=3 uid="uid://dv3hgg6xkll6s"]
+
+[ext_resource type="Script" path="res://levels/games/level_snake.gd" id="1_1ymue"]
+[ext_resource type="Theme" uid="uid://be5w4ua33gtra" path="res://themes/buttons.tres" id="3_j0jqu"]
+[ext_resource type="AudioStream" uid="uid://dot1tmhqn0gju" path="res://sounds/crunch.wav" id="3_rt3lx"]
+[ext_resource type="FontFile" uid="uid://ceoj7py0vd6t2" path="res://fonts/Super Milk.ttf" id="3_vye42"]
+[ext_resource type="Texture2D" uid="uid://b3t3tfppbfun2" path="res://sprites/snake_tileset.png" id="5_1srci"]
+[ext_resource type="LabelSettings" uid="uid://1laqch6ese18" path="res://themes/labels.tres" id="5_u2vfw"]
+[ext_resource type="Texture2D" uid="uid://bqyrbysl5emv6" path="res://sprites/bone.png" id="7_jr2ss"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prcw6"]
+texture = ExtResource("5_1srci")
+texture_region_size = Vector2i(64, 64)
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dgs5r"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_prcw6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_88r5u"]
+font = ExtResource("3_vye42")
+font_size = 21
+font_color = Color(0.00392157, 0, 0.00392157, 0.741176)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xb54"]
+resource_name = "Dog"
+texture = ExtResource("5_1srci")
+texture_region_size = Vector2i(64, 64)
+3:2/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+9:4/0 = 0
+8:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osgol"]
+resource_name = "Bone"
+texture = ExtResource("5_1srci")
+texture_region_size = Vector2i(64, 64)
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_paqgs"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_8xb54")
+sources/1 = SubResource("TileSetAtlasSource_osgol")
+
+[node name="LevelSnake" type="Node2D"]
+script = ExtResource("1_1ymue")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TileMapBackground" type="TileMap" parent="Background"]
+tile_set = SubResource("TileSet_dgs5r")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 458752, 7, 1, 458752, 7, 2, 458752, 7, 3, 458752, 7, 4, 458752, 7, 5, 458752, 7, 6, 458752, 7, 7, 458752, 7, 8, 458752, 7, 9, 458752, 7, 10, 458752, 7, 11, 458752, 7, 12, 458752, 7, 13, 458752, 7, 14, 458752, 7, 15, 458752, 7, 589839, 458752, 7, 589838, 458752, 7, 589837, 458752, 7, 589836, 458752, 7, 589835, 458752, 7, 589834, 458752, 7, 589833, 458752, 7, 589832, 458752, 7, 589831, 458752, 7, 589830, 458752, 7, 589829, 458752, 7, 589828, 458752, 7, 589827, 458752, 7, 589826, 458752, 7, 589825, 458752, 7, 589824, 458752, 7, 131072, 196608, 7, 196608, 196608, 7, 262144, 196608, 7, 327680, 196608, 7, 393216, 196608, 7, 458752, 196608, 7, 131087, 327680, 7, 196623, 327680, 7, 262159, 327680, 7, 327695, 327680, 7, 393231, 327680, 7, 458767, 327680, 7, 524289, 262144, 8, 524290, 262144, 8, 524291, 262144, 8, 524292, 262144, 8, 524293, 262144, 8, 524294, 262144, 8, 524295, 262144, 8, 524296, 262144, 8, 524297, 262144, 8, 524298, 262144, 8, 524299, 262144, 8, 524300, 262144, 8, 524301, 262144, 8, 524302, 262144, 8, 65537, 262144, 6, 65538, 262144, 6, 65539, 262144, 6, 65540, 262144, 6, 65541, 262144, 6, 65542, 262144, 6, 65543, 262144, 6, 65544, 262144, 6, 65545, 262144, 6, 65546, 262144, 6, 65547, 262144, 6, 65548, 262144, 6, 65549, 262144, 6, 65550, 262144, 6, 65551, 327680, 6, 65536, 196608, 6, 524288, 196608, 8, 524303, 327680, 8, 327685, 262144, 7, 262149, 262144, 7, 196613, 262144, 7, 131077, 262144, 7, 131076, 262144, 7, 131075, 262144, 7, 131074, 262144, 7, 131073, 262144, 7, 196609, 262144, 7, 262145, 262144, 7, 327681, 262144, 7, 393217, 262144, 7, 458753, 262144, 7, 458754, 262144, 7, 393218, 262144, 7, 327682, 262144, 7, 262146, 262144, 7, 196610, 262144, 7, 196611, 262144, 7, 262147, 262144, 7, 327683, 262144, 7, 393219, 262144, 7, 458755, 262144, 7, 458756, 262144, 7, 393220, 262144, 7, 327684, 262144, 7, 262148, 262144, 7, 196612, 262144, 7, 393221, 262144, 7, 458757, 262144, 7, 458758, 262144, 7, 393222, 262144, 7, 327686, 262144, 7, 262150, 262144, 7, 196614, 262144, 7, 131078, 262144, 7, 131079, 262144, 7, 196615, 262144, 7, 262151, 262144, 7, 327687, 262144, 7, 393223, 262144, 7, 458759, 262144, 7, 458760, 262144, 7, 393224, 262144, 7, 327688, 262144, 7, 262152, 262144, 7, 196616, 262144, 7, 131080, 262144, 7, 131081, 262144, 7, 196617, 262144, 7, 262153, 262144, 7, 327689, 262144, 7, 393225, 262144, 7, 458761, 262144, 7, 458762, 262144, 7, 393226, 262144, 7, 327690, 262144, 7, 262154, 262144, 7, 196618, 262144, 7, 131082, 262144, 7, 131083, 262144, 7, 196619, 262144, 7, 262155, 262144, 7, 327691, 262144, 7, 393227, 262144, 7, 458763, 262144, 7, 458764, 262144, 7, 393228, 262144, 7, 327692, 262144, 7, 262156, 262144, 7, 196620, 262144, 7, 131084, 262144, 7, 131085, 262144, 7, 196621, 262144, 7, 262157, 262144, 7, 327693, 262144, 7, 393229, 262144, 7, 458765, 262144, 7, 458766, 262144, 7, 393230, 262144, 7, 327694, 262144, 7, 262158, 262144, 7, 196622, 262144, 7, 131086, 262144, 7)
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Start" type="Control" parent="Labels"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("3_j0jqu")
+
+[node name="Label" type="Label" parent="Labels/Start"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 65.0
+offset_right = 1024.0
+offset_bottom = 191.0
+text = "Welcome to SNAKE"
+label_settings = ExtResource("5_u2vfw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="Labels/Start"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 259.0
+offset_right = 725.0
+offset_bottom = 290.0
+focus_neighbor_top = NodePath("../ExitButton")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="Labels/Start"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 315.0
+offset_right = 728.0
+offset_bottom = 346.0
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "EXIT GAME"
+
+[node name="GameOver" type="Control" parent="Labels"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("3_j0jqu")
+
+[node name="Label" type="Label" parent="Labels/GameOver"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 68.0
+offset_right = 1024.0
+offset_bottom = 229.0
+text = "GAME OVER
+Your score: %s"
+label_settings = ExtResource("5_u2vfw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="Labels/GameOver"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 259.0
+offset_right = 725.0
+offset_bottom = 290.0
+focus_neighbor_top = NodePath("../ExitButton")
+text = "RESTART"
+
+[node name="ExitButton" type="Button" parent="Labels/GameOver"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 315.0
+offset_right = 728.0
+offset_bottom = 346.0
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "EXIT GAME"
+
+[node name="Pause" type="Control" parent="Labels"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("3_j0jqu")
+
+[node name="Label" type="Label" parent="Labels/Pause"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 67.0
+offset_right = 1022.0
+offset_bottom = 188.0
+text = "GAME PAUSED"
+label_settings = ExtResource("5_u2vfw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Labels/Pause"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 259.0
+offset_right = 725.0
+offset_bottom = 290.0
+focus_neighbor_top = NodePath("../ExitButton")
+text = "RESTART"
+
+[node name="ExitButton" type="Button" parent="Labels/Pause"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 315.0
+offset_right = 728.0
+offset_bottom = 346.0
+focus_neighbor_bottom = NodePath("../RestartButton")
+text = "EXIT GAME"
+
+[node name="Score" type="Control" parent="Labels"]
+visible = false
+anchors_preset = 0
+
+[node name="ScoreLabel" type="Label" parent="Labels/Score"]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 23.0
+offset_right = 937.0
+offset_bottom = 51.0
+text = "Score"
+label_settings = SubResource("LabelSettings_88r5u")
+
+[node name="ScoreCount" type="Label" parent="Labels/Score"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 23.0
+offset_right = 975.0
+offset_bottom = 51.0
+text = "0"
+label_settings = SubResource("LabelSettings_88r5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Labels/Score"]
+position = Vector2(1002.25, 29)
+scale = Vector2(0.102, 0.123)
+texture = ExtResource("7_jr2ss")
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="CrunchSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_rt3lx")
+
+[node name="TileMapGame" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_paqgs")
+format = 2
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="DogTick" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="pressed" from="Labels/Start/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Labels/Start/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Labels/GameOver/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Labels/GameOver/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Labels/Pause/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Labels/Pause/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="timeout" from="DogTick" to="." method="_on_dog_tick_timeout"]
